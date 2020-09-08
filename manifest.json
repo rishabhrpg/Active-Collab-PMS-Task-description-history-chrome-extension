@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "Undo for Active Collab",
+  "version": "1.0.0",
+  "minimum_chrome_version": "80",
+  "icons": {
+    "16": "assets/icons/main/16.png",
+    "32": "assets/icons/main/32.png",
+    "48": "assets/icons/main/48.png"
+  },
+  "description": "Maintains history for long descriptions which easily get lost when clicked outside of modal.",
+  "homepage_url": "https://github.com/rishabhrpg",
+  "short_name": "Undo for Active Collab",
+  "permissions": [
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*"
+      ],
+      "all_frames": true,
+      "js": [
+        "js/extend.js"
+      ],
+      "match_about_blank": false,
+      "run_at": "document_end"
+    }
+  ],
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+  "web_accessible_resources": [
+    "assets/*",
+    "css/*",
+    "js/*"
+  ]
+}
